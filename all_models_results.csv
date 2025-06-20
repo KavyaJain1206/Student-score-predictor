@@ -1,0 +1,22 @@
+Target,Model,R²,CV R²,RMSE,MAE,MSE,Max Error,Best Parameters
+math score,Lasso,0.8816,0.8725,5.3686,4.1918,28.8223,15.1939,{'alpha': 0.027521833307084007}
+math score,Ridge,0.8811,0.8723,5.3778,4.1984,28.9209,15.2062,{'alpha': 0.03282590203877106}
+math score,GradientBoosting,0.8731,0.8575,5.5579,4.2937,30.8901,17.334,"{'n_estimators': 117, 'learning_rate': 0.16672131460876227, 'max_depth': 2, 'min_samples_split': 7, 'min_samples_leaf': 3}"
+math score,XGBoost,0.8681,0.8554,5.6655,4.3818,32.0984,17.1818,"{'n_estimators': 106, 'learning_rate': 0.12290447104190332, 'max_depth': 3}"
+math score,RandomForest,0.8558,0.8449,5.9233,4.5758,35.0851,21.5995,"{'n_estimators': 469, 'max_depth': 7, 'min_samples_split': 2, 'min_samples_leaf': 2}"
+math score,SVR,0.8343,0.8445,6.3497,4.6532,40.3185,37.4756,"{'C': 9.979604257465304, 'epsilon': 0.9689715185708057}"
+math score,DecisionTree,0.8191,0.8032,6.635,5.1523,44.0227,29.3333,"{'max_depth': 6, 'min_samples_split': 6, 'min_samples_leaf': 3}"
+reading score,Lasso,0.9172,0.9234,4.3289,3.4838,18.7394,11.7914,{'alpha': 0.02518540832281691}
+reading score,Ridge,0.9165,0.9229,4.3478,3.4923,18.903,11.7819,{'alpha': 0.6246077656804283}
+reading score,GradientBoosting,0.9141,0.9188,4.4088,3.6178,19.4375,12.0851,"{'n_estimators': 295, 'learning_rate': 0.0618996165570913, 'max_depth': 2, 'min_samples_split': 7, 'min_samples_leaf': 3}"
+reading score,XGBoost,0.9129,0.919,4.4401,3.6781,19.7146,11.4168,"{'n_estimators': 348, 'learning_rate': 0.034647986606877054, 'max_depth': 2}"
+reading score,RandomForest,0.9067,0.915,4.5951,3.7216,21.1145,15.3635,"{'n_estimators': 370, 'max_depth': 11, 'min_samples_split': 3, 'min_samples_leaf': 5}"
+reading score,DecisionTree,0.8925,0.9,4.9332,3.9554,24.336,14.1754,"{'max_depth': 5, 'min_samples_split': 9, 'min_samples_leaf': 4}"
+reading score,SVR,0.8638,0.8949,5.5518,4.1547,30.8225,30.6255,"{'C': 9.943814702511004, 'epsilon': 0.3051225102106327}"
+writing score,Lasso,0.9372,0.9454,3.8915,3.2194,15.1437,11.0725,{'alpha': 0.025289182593153648}
+writing score,Ridge,0.9368,0.9452,3.9018,3.2278,15.224,11.0821,{'alpha': 2.2413274672212182}
+writing score,GradientBoosting,0.9291,0.9393,4.1344,3.3077,17.0934,15.3821,"{'n_estimators': 173, 'learning_rate': 0.17010609513887745, 'max_depth': 2, 'min_samples_split': 10, 'min_samples_leaf': 3}"
+writing score,XGBoost,0.9285,0.9396,4.1519,3.2967,17.2385,16.8369,"{'n_estimators': 244, 'learning_rate': 0.12112449983609841, 'max_depth': 2}"
+writing score,RandomForest,0.9153,0.929,4.519,3.6107,20.4216,16.4767,"{'n_estimators': 280, 'max_depth': 20, 'min_samples_split': 5, 'min_samples_leaf': 2}"
+writing score,SVR,0.8885,0.9263,5.1835,3.8081,26.8687,32.7837,"{'C': 9.982643466489646, 'epsilon': 0.6766380060231636}"
+writing score,DecisionTree,0.8682,0.907,5.6355,4.3197,31.7591,26.3333,"{'max_depth': 15, 'min_samples_split': 6, 'min_samples_leaf': 5}"
