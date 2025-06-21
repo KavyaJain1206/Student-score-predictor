@@ -9,6 +9,49 @@ This project builds **individual machine learning models** to predict **student 
 Each target is modeled **separately** using a range of regression algorithms, with **Optuna-based hyperparameter tuning**, and the best-performing models are saved.
 
 ---
+## Dataset Used: StudentsPerformance.csv
+
+This dataset contains exam scores and demographic data for high school students. It is used to analyze how various factors influence student performance in three core subjects:
+
+- Math
+- Reading
+- Writing
+
+Each row represents a single student.
+
+---
+
+## Source
+
+- **Original Dataset**: [Kaggle - Students Performance in Exams](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams)
+- **File Name**: `StudentsPerformance.csv`
+
+---
+
+## Columns and Description
+
+| Column                    | Description |
+|---------------------------|-------------|
+| `gender`                  | Student gender (male/female) |
+| `race/ethnicity`          | Group classification (A–E) |
+| `parental level of education` | Highest level of education achieved by parent |
+| `lunch`                   | Type of lunch received (standard or free/reduced) |
+| `test preparation course` | Whether the student completed a test prep course |
+| `math score`              | Score in math exam (0–100) |
+| `reading score`           | Score in reading exam (0–100) |
+| `writing score`           | Score in writing exam (0–100) |
+
+---
+
+## Usage in This Project
+
+This dataset is used to:
+
+- Predict individual subject scores (Math, Reading, Writing) based on personal and academic attributes.
+- Train separate ML models for each score.
+- Analyze correlations between demographic features and academic outcomes.
+
+---
 
 ##  Features
 
@@ -34,33 +77,6 @@ Each target is modeled **separately** using a range of regression algorithms, wi
   - CSV files for all model performances
   - CSV file for best-performing models
 
----
-
-##  Project Structure
-
-```bash
-Student-score-predictor/
-│
-├── models/
-│   ├── math_score_model.pkl
-│   ├── reading_score_model.pkl
-│   └── writing_score_model.pkl
-│
-├── data/
-│   └── StudentsPerformance.csv
-│
-├── notebooks/
-│   └── student_score_pipeline.ipynb
-│
-├── outputs/
-│   ├── all_models_results.csv
-│   └── best_models_summary.csv
-│
-├── README.md
-├── requirements.txt
-└── create_virtualenv.md
-
-```
 ---
 # Installation Guide for Student Score Predictor
 
@@ -135,3 +151,45 @@ If you prefer using Google Colab:
 ```bash
 !pip install optuna xgboost joblib matplotlib seaborn
 ```
+---
+
+- Results and configurations are stored in:
+- `all_models_results.csv`: All model trials and metrics
+- `saved_best_models_info.csv`: Only the best models and their details
+
+---
+
+## Prediction Pipeline
+
+Each saved model includes:
+- StandardScaler
+- Trained ML model
+- Encoding steps matched to training
+
+To load and predict from a saved model:
+
+```python
+import pandas as pd
+import joblib
+
+# --- Load model ---
+pipeline = joblib.load("best_saved_models/math_score_Lasso.pkl")
+
+# --- Prepare input ---
+input_data = pd.DataFrame([{
+  'gender': 'female',
+  'race/ethnicity': 'group B',
+  'lunch': 'standard',
+  'test preparation course': 'completed',
+  'parental level of education': "bachelor's degree",
+  'reading score': 75,
+  'writing score': 72
+}])
+
+# Apply same ordinal encoding and one-hot encoding as in training
+# (Refer to the prediction script for full preprocessing steps)
+
+# --- Predict ---
+predicted_score = pipeline.predict(input_encoded)[0]
+print(f"Predicted Math Score: {predicted_score:.2f}")
+
