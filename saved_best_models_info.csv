@@ -1,0 +1,4 @@
+Target,Model,Model File,R²,CV R²,RMSE,MAE,MSE,Max Error,Best Parameters
+math score,Lasso,best_saved_models/math_score_Lasso.pkl,0.8816,0.8725,5.3685,4.1917,28.8212,15.1937,"{'n_estimators': 140, 'learning_rate': 0.08880199648061793, 'max_depth': 2}"
+reading score,Lasso,best_saved_models/reading_score_Lasso.pkl,0.9172,0.9234,4.3289,3.4837,18.739,11.7904,"{'n_estimators': 426, 'learning_rate': 0.030065846546928177, 'max_depth': 2}"
+writing score,Lasso,best_saved_models/writing_score_Lasso.pkl,0.9372,0.9454,3.8916,3.2195,15.1442,11.0722,"{'n_estimators': 179, 'learning_rate': 0.1391628477973956, 'max_depth': 2}"
