@@ -1,4 +1,0 @@
-Target,Model,Model File,R²,CV R²,RMSE,MAE,MSE,Max Error,Best Parameters
-math score,Lasso,best_saved_models/math_score_Lasso.pkl,0.8816,0.8725,5.3686,4.1918,28.8223,15.1939,{'alpha': 0.027521833307084007}
-reading score,Lasso,best_saved_models/reading_score_Lasso.pkl,0.9172,0.9234,4.3289,3.4838,18.7394,11.7914,{'alpha': 0.02518540832281691}
-writing score,Lasso,best_saved_models/writing_score_Lasso.pkl,0.9372,0.9454,3.8915,3.2194,15.1437,11.0725,{'alpha': 0.025289182593153648}
